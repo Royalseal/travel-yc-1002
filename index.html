@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运城自驾之旅 · 国庆四日行程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FAF8F5;
+            --color-bg-card: #FFFFFF;
+            --color-text: #2C2C2C;
+            --color-text-light: #6B6B6B;
+            --color-accent: #C45A3B;
+            --color-accent-light: #E8D5CE;
+            --color-sage: #7A8B6E;
+            --color-sage-light: #E8EDE5;
+            --color-gold: #B8956E;
+            --color-gold-light: #F5EFE5;
+            --color-ocean: #4A7C8C;
+            --color-ocean-light: #E3EEF2;
+            --color-hotel: #8B7355;
+            --color-hotel-light: #F5F0EB;
+            --color-food: #D4573B;
+            --color-food-light: #FEF0E8;
+            --serif: 'Noto Serif SC', serif;
+            --sans: 'Noto Sans SC', sans-serif;
+            --shadow: 0 12px 32px rgba(74, 52, 34, 0.06);
+            --shadow-lg: 0 24px 56px rgba(74, 52, 34, 0.10);
+            --radius: 18px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.75;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(circle at 12% 8%, rgba(196, 90, 59, 0.045), transparent 42%),
+                              radial-gradient(circle at 88% 20%, rgba(122, 139, 110, 0.05), transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            padding: 92px 24px 76px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(232, 213, 206, 0.35), rgba(250, 248, 245, 0) 55%);
+            pointer-events: none;
+        }
+        .hero-inner {
+            position: relative;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .badge {
+            display: inline-block;
+            font-family: var(--serif);
+            font-size: 12px;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            border: 1px solid rgba(196, 90, 59, 0.4);
+            padding: 7px 18px;
+            border-radius: 999px;
+            margin-bottom: 28px;
+        }
+        .hero h1 {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: clamp(40px, 6vw, 68px);
+            letter-spacing: 0.06em;
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+        .hero .subtitle {
+            margin-top: 18px;
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--color-text-light);
+            letter-spacing: 0.12em;
+        }
+        .hero .divider {
+            width: 56px;
+            height: 2px;
+            background: var(--color-accent);
+            margin: 30px auto;
+            border-radius: 2px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--color-bg-card);
+            border: 1px solid rgba(44, 44, 44, 0.06);
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-size: 13.5px;
+            color: var(--color-text);
+            box-shadow: var(--shadow);
+            font-weight: 400;
+        }
+        .meta-item svg { flex-shrink: 0; }
+        .meta-item .label { color: var(--color-text-light); font-weight: 300; margin-right: 2px; }
+
+        .route-bar {
+            margin: 38px auto 0;
+            max-width: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            font-family: var(--serif);
+            font-weight: 600;
+            color: var(--color-accent);
+            font-size: 17px;
+        }
+        .route-bar .line {
+            flex: 1;
+            height: 0;
+            border-top: 2px dashed rgba(196, 90, 59, 0.45);
+            position: relative;
+        }
+        .route-bar .line::after {
+            content: '';
+            position: absolute;
+            right: -3px; top: -5px;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--color-accent);
+        }
+        .route-bar .via {
+            font-weight: 400;
+            font-family: var(--sans);
+            color: var(--color-sage);
+            font-size: 13px;
+            letter-spacing: 0.05em;
+        }
+
+        /* ---------- Layout ---------- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 22px 80px;
+        }
+        .section { margin-top: 72px; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--color-text);
+            margin-bottom: 28px;
+        }
+        .section-title::before {
+            content: '';
+            width: 26px;
+            height: 3px;
+            background: var(--color-accent);
+            border-radius: 2px;
+        }
+        .section-title .en {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-left: 4px;
+        }
+
+        /* ---------- Overview ---------- */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .overview-card {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(44,44,44,0.05);
+            border-radius: var(--radius);
+            padding: 22px 18px;
+            box-shadow: var(--shadow);
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+        .overview-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .overview-card .d {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--color-accent);
+            line-height: 1.2;
+        }
+        .overview-card .date {
+            font-size: 12px;
+            color: var(--color-text-light);
+            letter-spacing: 0.04em;
+            margin-top: 4px;
+        }
+        .overview-card .t {
+            font-size: 13.5px;
+            font-weight: 500;
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+        .overview-card .m {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 11.5px;
+            color: var(--color-sage);
+            background: var(--color-sage-light);
+            padding: 3px 10px;
+            border-radius: 999px;
+        }
+
+        /* ---------- Day cards ---------- */
+        .day-card {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(44,44,44,0.05);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: box-shadow .35s ease;
+        }
+        .day-card:hover { box-shadow: var(--shadow-lg); }
+        .day-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 24px 26px;
+            cursor: pointer;
+            user-select: none;
+            transition: background .3s ease;
+        }
+        .day-header:hover { background: #FBF9F6; }
+        .day-id {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex: 1;
+            min-width: 0;
+        }
+        .day-num {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 30px;
+            color: var(--color-accent);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            min-width: 74px;
+        }
+        .day-num small {
+            display: block;
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            color: var(--color-text-light);
+            margin-top: 5px;
+        }
+        .day-head-text { min-width: 0; }
+        .day-head-text .ht {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: 17px;
+            color: var(--color-text);
+        }
+        .day-head-text .hd {
+            font-size: 12.5px;
+            color: var(--color-text-light);
+            margin-top: 3px;
+            letter-spacing: 0.04em;
+        }
+        .day-arrow {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(44,44,44,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform .4s cubic-bezier(.4,0,.2,1), background .3s ease, color .3s ease;
+            color: var(--color-text-light);
+        }
+        .day-card.open .day-arrow {
+            transform: rotate(180deg);
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #fff;
+        }
+        .day-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .55s cubic-bezier(.4,0,.2,1);
+        }
+        .day-body {
+            padding: 4px 26px 28px;
+        }
+        .day-body .rule {
+            height: 1px;
+            background: rgba(44,44,44,0.06);
+            margin-bottom: 20px;
+        }
+
+        /* ---------- Info blocks ---------- */
+        .info-block {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            border-radius: 13px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+            border-left: 4px solid transparent;
+        }
+        .info-block:last-child { margin-bottom: 0; }
+        .tag {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 15px;
+            color: #fff;
+            margin-top: 1px;
+        }
+        .ib-body { flex: 1; min-width: 0; }
+        .ib-title {
+            font-weight: 600;
+            font-size: 14.5px;
+            color: var(--color-text);
+            letter-spacing: 0.01em;
+        }
+        .ib-title .time {
+            font-weight: 500;
+            font-size: 12.5px;
+            letter-spacing: 0.06em;
+            margin-right: 6px;
+        }
+        .ib-desc {
+            font-size: 13.5px;
+            color: var(--color-text-light);
+            margin-top: 5px;
+            font-weight: 300;
+        }
+        .ib-desc b { color: var(--color-text); font-weight: 500; }
+        .ib-addr {
+            display: inline-block;
+            margin-top: 9px;
+            font-size: 12px;
+            color: var(--color-text);
+            background: rgba(255,255,255,0.65);
+            padding: 4px 11px;
+            border-radius: 7px;
+            letter-spacing: 0.02em;
+        }
+
+        /* block color variants */
+        .info-block.transport { background: var(--color-sage-light); border-left-color: var(--color-sage); }
+        .info-block.transport .tag { background: var(--color-sage); }
+        .info-block.transport .ib-title .time { color: var(--color-sage); font-weight: 600; }
+        .info-block.transport .ib-addr { background: rgba(255,255,255,0.6); }
+
+        .info-block.hotel { background: var(--color-hotel-light); border-left-color: var(--color-hotel); }
+        .info-block.hotel .tag { background: var(--color-hotel); }
+        .info-block.hotel .ib-title .time { color: var(--color-hotel); font-weight: 600; }
+
+        .info-block.food { background: var(--color-food-light); border-left-color: var(--color-food); }
+        .info-block.food .tag { background: var(--color-food); }
+        .info-block.food .ib-title .time { color: var(--color-food); font-weight: 600; }
+
+        .info-block.attraction { background: var(--color-accent-light); border-left-color: var(--color-accent); }
+        .info-block.attraction .tag { background: var(--color-accent); }
+        .info-block.attraction .ib-title .time { color: var(--color-accent); font-weight: 600; }
+
+        .info-block.train { background: var(--color-gold-light); border-left-color: var(--color-gold); }
+        .info-block.train .tag { background: var(--color-gold); }
+
+        .info-block.flight { background: var(--color-ocean-light); border-left-color: var(--color-ocean); }
+        .info-block.flight .tag { background: var(--color-ocean); }
+
+        /* ---------- Split section ---------- */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            align-items: start;
+        }
+        .panel {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(44,44,44,0.05);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px;
+        }
+        .panel-title {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+        .attr-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(44,44,44,0.09);
+        }
+        .attr-item:last-child { border-bottom: none; }
+        .stars {
+            flex-shrink: 0;
+            font-size: 13px;
+            color: var(--color-accent);
+            letter-spacing: 1px;
+            width: 52px;
+            font-weight: 600;
+        }
+        .attr-name { font-weight: 600; font-size: 14px; color: var(--color-text); }
+        .attr-desc { font-size: 12.5px; color: var(--color-text-light); margin-top: 2px; font-weight: 300; }
+
+        .food-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 11px 0;
+            border-bottom: 1px dashed rgba(44,44,44,0.09);
+        }
+        .food-row:last-child { border-bottom: none; }
+        .meal-chip {
+            flex-shrink: 0;
+            width: 40px;
+            text-align: center;
+            font-size: 11.5px;
+            font-weight: 500;
+            color: #fff;
+            background: var(--color-food);
+            border-radius: 7px;
+            padding: 3px 0;
+            letter-spacing: 0.05em;
+        }
+        .meal-chip.breakfast { background: var(--color-sage); }
+        .meal-chip.lunch { background: var(--color-gold); }
+        .food-name { font-weight: 500; font-size: 14px; color: var(--color-text); }
+        .food-note { font-size: 12px; color: var(--color-text-light); margin-top: 2px; font-weight: 300; }
+
+        /* ---------- Tips ---------- */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .tip-card {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(44,44,44,0.05);
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border-top: 3px solid var(--color-accent);
+        }
+        .tip-card.green { border-top-color: var(--color-sage); }
+        .tip-card.gold { border-top-color: var(--color-gold); }
+        .tip-card .tt {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--color-text);
+            margin-bottom: 8px;
+            font-family: var(--serif);
+        }
+        .tip-card .td { font-size: 13px; color: var(--color-text-light); font-weight: 300; }
+
+        .gift-note {
+            margin-top: 22px;
+            background: var(--color-gold-light);
+            border-left: 4px solid var(--color-gold);
+            border-radius: 13px;
+            padding: 18px 22px;
+            font-size: 13.5px;
+            color: var(--color-text);
+        }
+        .gift-note b { font-weight: 600; }
+
+        /* ---------- Footer ---------- */
+        .footer {
+            text-align: center;
+            padding: 70px 24px 60px;
+            color: var(--color-text-light);
+            border-top: 1px solid rgba(44,44,44,0.05);
+        }
+        .footer .wish {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: 22px;
+            color: var(--color-text);
+            letter-spacing: 0.08em;
+        }
+        .footer .en {
+            margin-top: 10px;
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+        }
+        .footer .heart {
+            margin-top: 20px;
+            color: var(--color-accent);
+        }
+
+        /* ---------- Reveal animation ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 768px) {
+            .hero { padding: 64px 20px 56px; }
+            .meta { flex-direction: column; align-items: stretch; }
+            .meta-item { justify-content: center; }
+            .overview-grid { grid-template-columns: repeat(2, 1fr); }
+            .split { grid-template-columns: 1fr; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .day-header { padding: 20px 18px; }
+            .day-num { min-width: 58px; font-size: 26px; }
+            .day-body { padding: 4px 16px 22px; }
+            .section-title { font-size: 21px; }
+        }
+        @media (max-width: 440px) {
+            .overview-grid { grid-template-columns: 1fr; }
+            .route-bar { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ Hero ============ -->
+    <header class="hero">
+        <div class="hero-inner">
+            <span class="badge">Travel Itinerary</span>
+            <h1>运城自驾之旅</h1>
+            <p class="subtitle">国庆四日 · 京昆高速 · 盐湖关帝 · 永乐宫壁画</p>
+            <div class="divider"></div>
+            <div class="meta">
+                <div class="meta-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+                    <span><span class="label">日期</span> 2026.10.02 – 10.05</span>
+                </div>
+                <div class="meta-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    <span><span class="label">天数</span> 4 天 3 晚</span>
+                </div>
+                <div class="meta-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="3" y="11" width="18" height="7" rx="2"/><path d="M7 15h.01M17 15h.01"/></svg>
+                    <span><span class="label">出行</span> 自驾 · 单程约 750km</span>
+                </div>
+                <div class="meta-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+                    <span><span class="label">路线</span> 北京 → 运城 → 北京</span>
+                </div>
+            </div>
+            <div class="route-bar">
+                <span>北京</span>
+                <span class="line"></span>
+                <span class="via">G5 京昆高速 · 约 9h</span>
+                <span class="line"></span>
+                <span>运城</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ============ 行程总览 ============ -->
+        <section class="section reveal">
+            <h2 class="section-title">行程总览 <span class="en">Overview</span></h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="d">DAY 01</div>
+                    <div class="date">10/2 · 周四</div>
+                    <div class="t">出发抵运城<br>仅晚餐</div>
+                    <span class="m">自驾</span>
+                </div>
+                <div class="overview-card">
+                    <div class="d">DAY 02</div>
+                    <div class="date">10/3 · 周五</div>
+                    <div class="t">盐湖 + 池神庙<br>解州关帝庙</div>
+                    <span class="m">打车 + 自驾</span>
+                </div>
+                <div class="overview-card">
+                    <div class="d">DAY 03</div>
+                    <div class="date">10/4 · 周六</div>
+                    <div class="t">永济三连<br>芮城永乐宫</div>
+                    <span class="m">自驾</span>
+                </div>
+                <div class="overview-card">
+                    <div class="d">DAY 04</div>
+                    <div class="date">10/5 · 周日</div>
+                    <div class="t">早餐 + 午餐<br>13:00 返京</div>
+                    <span class="m">自驾</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 逐日行程 ============ -->
+        <section class="section reveal">
+            <h2 class="section-title">逐日行程 <span class="en">Itinerary</span></h2>
+
+            <!-- Day 1 -->
+            <article class="day-card open">
+                <div class="day-header">
+                    <div class="day-id">
+                        <div class="day-num">01<small>DAY ONE</small></div>
+                        <div class="day-head-text">
+                            <div class="ht">傍晚抵达 · 开启运城之夜</div>
+                            <div class="hd">10/2 周四 ｜ 自驾出发，全程约 9 小时</div>
+                        </div>
+                    </div>
+                    <div class="day-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="day-body">
+                        <div class="rule"></div>
+                        <div class="info-block transport">
+                            <span class="tag">行</span>
+                            <div class="ib-body">
+                                <div class="ib-title"><span class="time">08:30</span>G5 京昆高速入口出发</div>
+                                <div class="ib-desc">大件路桥入口上高速 → 经石家庄 / 阳泉西行，单程约 750km。中途建议在<b>石家庄 / 阳泉服务区</b>休整一次。</div>
+                            </div>
+                        </div>
+                        <div class="info-block hotel">
+                            <span class="tag">宿</span>
+                            <div class="ib-body">
+                                <div class="ib-title"><span class="time">约 18:00</span>抵达盐湖区，入住酒店</div>
+                                <div class="ib-desc">入住 <b>运城美巢雅韵酒店</b>（红旗东街一带，位置居中）。车辆停酒店停车场，后续市区活动一律打车。</div>
+                            </div>
+                        </div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">晚餐 · 二选一（建议打车，避开夜市停车）</div>
+                                <div class="ib-desc"><b>黄河夜市 / 御沁园夜市</b>：样多、随走随吃，国庆周边禁停难停；或 <b>星河摇滚炒鸡</b>（44% 第一推荐）：鸡肉入味、酱汁浓、面条吸汤。</div>
+                                <span class="ib-addr">导航搜「御沁园夜市」/「星河摇滚炒鸡」</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Day 2 -->
+            <article class="day-card">
+                <div class="day-header">
+                    <div class="day-id">
+                        <div class="day-num">02<small>DAY TWO</small></div>
+                        <div class="day-head-text">
+                            <div class="ht">盐湖与关帝 · 盐湖区 + 解州线</div>
+                            <div class="hd">10/3 周五 ｜ 早市碳水 → 七彩盐湖 → 关帝庙</div>
+                        </div>
+                    </div>
+                    <div class="day-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="day-body">
+                        <div class="rule"></div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">早餐｜东湖早市（打车前往）</div>
+                                <div class="ib-desc">本地碳水天堂：<b>圈圈馍、丸子汤、软麻花</b>，仅早晨出摊，随走随吃。</div>
+                                <span class="ib-addr">运城市盐湖区东湖农贸市场</span>
+                            </div>
+                        </div>
+                        <div class="info-block attraction">
+                            <span class="tag">景</span>
+                            <div class="ib-body">
+                                <div class="ib-title"><span class="time">上午</span>运城盐湖（七彩盐湖）+ 池神庙</div>
+                                <div class="ib-desc">沿木栈道观湖，可下湖漂浮（带换洗衣物与毛巾）。池神庙与盐湖毗邻，顺路同游。</div>
+                                <span class="ib-addr">盐湖区城南（盐湖大道）</span>
+                            </div>
+                        </div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">午餐｜解州王剑羊肉泡</div>
+                                <div class="ib-desc">汤底醇厚、馍饼酥脆、<b>风葫芦</b>外脆里糯（20% 推荐，携程 4.5 分）。</div>
+                                <span class="ib-addr">盐湖区解州镇西关（近关帝庙）</span>
+                            </div>
+                        </div>
+                        <div class="info-block attraction">
+                            <span class="tag">景</span>
+                            <div class="ib-body">
+                                <div class="ib-title"><span class="time">下午</span>解州关帝庙（自驾往返）</div>
+                                <div class="ib-desc">世界最大关帝庙，逐院细看 <b>崇宁殿</b>、<b>春秋楼</b>，时间充裕可走遍全部院落。</div>
+                                <span class="ib-addr">盐湖区解州镇（与王剑羊肉泡同镇，午餐后极近）</span>
+                            </div>
+                        </div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">晚餐 · 二选一（打车前往）</div>
+                                <div class="ib-desc"><b>运城老五大盘鸡</b>：山西改良版，酱汁浓带微酸；或 <b>星河摇滚炒鸡</b>（若昨晚未吃）。</div>
+                                <span class="ib-addr">老五大盘鸡 · 人民北路与条山街交叉口</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Day 3 -->
+            <article class="day-card">
+                <div class="day-header">
+                    <div class="day-id">
+                        <div class="day-num">03<small>DAY THREE</small></div>
+                        <div class="day-head-text">
+                            <div class="ht">西线漫游 · 永济三连 + 芮城永乐宫</div>
+                            <div class="hd">10/4 周六 ｜ 鹳雀楼 → 大铁牛 → 普救寺 → 永乐宫</div>
+                        </div>
+                    </div>
+                    <div class="day-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="day-body">
+                        <div class="rule"></div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">早餐｜酒店附近 / 饼子夹万物</div>
+                                <div class="ib-desc">轻便简餐，为西线长途蓄力。</div>
+                            </div>
+                        </div>
+                        <div class="info-block attraction">
+                            <span class="tag">景</span>
+                            <div class="ib-body">
+                                <div class="ib-title"><span class="time">上午</span>永济三连（三处毗邻，车停各点停车场）</div>
+                                <div class="ib-desc"><b>鹳雀楼</b>：登楼看黄河，建议爬到顶层；<b>蒲津渡遗址 · 黄河大铁牛</b>：全平地必看；<b>普救寺</b>：有台阶，体力好可入内。</div>
+                                <span class="ib-addr">永济市蒲州镇黄河东岸沿线</span>
+                            </div>
+                        </div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">午餐｜永济老唐家牛肉饺子</div>
+                                <div class="ib-desc">非遗牛肉饺，皮薄馅足，蘸陈醋油泼辣子。</div>
+                                <span class="ib-addr">永济市舜都大道中段</span>
+                            </div>
+                        </div>
+                        <div class="info-block attraction">
+                            <span class="tag">景</span>
+                            <div class="ib-body">
+                                <div class="ib-title"><span class="time">下午</span>芮城永乐宫（向西约 40km）</div>
+                                <div class="ib-desc">元代壁画 <b>《朝元图》</b>巅峰（三清殿），殿内<b>禁用闪光灯</b>；顺路可加 <b>广仁王庙</b>（唐构，极小众）。</div>
+                                <span class="ib-addr">芮城县永乐北路（永乐镇）</span>
+                            </div>
+                        </div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">晚餐 · 二选一（回市区，打车）</div>
+                                <div class="ib-desc"><b>史家鱼加面</b>：香辣剁椒鱼 + 劲道面；或 <b>娃蛋火锅</b>：铜锅慢煮、食材实在。</div>
+                                <span class="ib-addr">导航实时定位为准</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Day 4 -->
+            <article class="day-card">
+                <div class="day-header">
+                    <div class="day-id">
+                        <div class="day-num">04<small>DAY FOUR</small></div>
+                        <div class="day-head-text">
+                            <div class="ht">从容返程 · 早餐与最后一餐</div>
+                            <div class="hd">10/5 周日 ｜ 上午轻装，13:00 前后返京</div>
+                        </div>
+                    </div>
+                    <div class="day-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="day-body">
+                        <div class="rule"></div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">早餐 · 二选一（打车）</div>
+                                <div class="ib-desc"><b>北相老白胡卜</b>：羊肉烩死面饼丝，秋冬暖胃；或 <b>东湖早市</b>二刷。</div>
+                                <span class="ib-addr">北相老白胡卜 · 盐湖区北相镇集市南口</span>
+                            </div>
+                        </div>
+                        <div class="info-block attraction">
+                            <span class="tag">景</span>
+                            <div class="ib-body">
+                                <div class="ib-title"><span class="time">上午</span>弹性 · 轻松安排</div>
+                                <div class="ib-desc">方案 A：池神庙补拍 / 南风广场散步（市区打车）；方案 B：早起向北走 <b>万荣飞云楼 + 后土祠</b>（约 50km，7:30 前出发，需权衡返程时间）。</div>
+                            </div>
+                        </div>
+                        <div class="info-block food">
+                            <span class="tag">食</span>
+                            <div class="ib-body">
+                                <div class="ib-title">午餐 · 最后一顿（二选一）</div>
+                                <div class="ib-desc"><b>运城老五大盘鸡</b>（顺路市区最方便），或 <b>解州王剑羊肉泡</b>（若顺路解州）。</div>
+                            </div>
+                        </div>
+                        <div class="info-block transport">
+                            <span class="tag">行</span>
+                            <div class="ib-body">
+                                <div class="ib-title"><span class="time">13:00</span>前后返京</div>
+                                <div class="ib-desc">回酒店取车直接上 G5 京昆高速，约 9h，中途同前休整。上午活动尽量轻装打车。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- ============ 必去景区 + 美食速查 ============ -->
+        <section class="section reveal">
+            <h2 class="section-title">必去景区 & 美食速查 <span class="en">Highlights</span></h2>
+            <div class="split">
+                <div class="panel">
+                    <div class="panel-title">必去景区清单</div>
+                    <div class="attr-item">
+                        <span class="stars">★★★</span>
+                        <div><div class="attr-name">运城盐湖（七彩盐湖）</div><div class="attr-desc">运城地标，可下湖漂浮</div></div>
+                    </div>
+                    <div class="attr-item">
+                        <span class="stars">★★★</span>
+                        <div><div class="attr-name">解州关帝庙</div><div class="attr-desc">世界最大关帝庙</div></div>
+                    </div>
+                    <div class="attr-item">
+                        <span class="stars">★★★</span>
+                        <div><div class="attr-name">永乐宫</div><div class="attr-desc">元代壁画巅峰《朝元图》</div></div>
+                    </div>
+                    <div class="attr-item">
+                        <span class="stars">★★★</span>
+                        <div><div class="attr-name">鹳雀楼 + 黄河大铁牛</div><div class="attr-desc">四大名楼 + 唐代铁牛</div></div>
+                    </div>
+                    <div class="attr-item">
+                        <span class="stars">★★</span>
+                        <div><div class="attr-name">池神庙</div><div class="attr-desc">与盐湖毗邻，顺路</div></div>
+                    </div>
+                    <div class="attr-item">
+                        <span class="stars">★★</span>
+                        <div><div class="attr-name">普救寺</div><div class="attr-desc">《西厢记》故事发生地</div></div>
+                    </div>
+                    <div class="attr-item">
+                        <span class="stars">★</span>
+                        <div><div class="attr-name">万荣飞云楼 / 后土祠</div><div class="attr-desc">较远，弹性安排</div></div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-title">用餐店铺 · 导航速查</div>
+                    <div class="food-row">
+                        <span class="meal-chip breakfast">早餐</span>
+                        <div><div class="food-name">东湖早市</div><div class="food-note">盐湖区东湖农贸市场 · 圈圈馍/丸子汤/软麻花</div></div>
+                    </div>
+                    <div class="food-row">
+                        <span class="meal-chip breakfast">早餐</span>
+                        <div><div class="food-name">北相老白胡卜</div><div class="food-note">北相镇集市南口 · 羊肉烩死面饼丝</div></div>
+                    </div>
+                    <div class="food-row">
+                        <span class="meal-chip lunch">午餐</span>
+                        <div><div class="food-name">解州王剑羊肉泡</div><div class="food-note">解州镇西关 · 4.5 分</div></div>
+                    </div>
+                    <div class="food-row">
+                        <span class="meal-chip lunch">午餐</span>
+                        <div><div class="food-name">永济老唐家牛肉饺子</div><div class="food-note">舜都大道中段 · 非遗</div></div>
+                    </div>
+                    <div class="food-row">
+                        <span class="meal-chip">晚餐</span>
+                        <div><div class="food-name">运城老五大盘鸡</div><div class="food-note">人民北路与条山街交叉口</div></div>
+                    </div>
+                    <div class="food-row">
+                        <span class="meal-chip">晚餐</span>
+                        <div><div class="food-name">星河摇滚炒鸡</div><div class="food-note">市区 · 44% 第一推荐（导航实时定位）</div></div>
+                    </div>
+                    <div class="food-row">
+                        <span class="meal-chip">晚餐</span>
+                        <div><div class="food-name">史家鱼加面 / 娃蛋火锅</div><div class="food-note">香辣剁椒鱼 / 铜锅慢煮</div></div>
+                    </div>
+                    <div class="food-row">
+                        <span class="meal-chip">夜市</span>
+                        <div><div class="food-name">黄河夜市 / 御沁园夜市</div><div class="food-note">市区 · 随走随吃</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 出行贴士 & 伴手礼 ============ -->
+        <section class="section reveal">
+            <h2 class="section-title">出行贴士 <span class="en">Tips</span></h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tt">市区出行 · 打车优先</div>
+                    <div class="td">车停酒店，夜市、早市、热门餐厅、盐湖门口一律打车/网约车；跨城（解州、永济、芮城、万荣）仍自驾。</div>
+                </div>
+                <div class="tip-card green">
+                    <div class="tt">装备与时间</div>
+                    <div class="td">舒适平底鞋、薄外套（10月 12–24℃）、墨镜防晒；热门景区早 8–9 点前进场，避开人潮。</div>
+                </div>
+                <div class="tip-card gold">
+                    <div class="tt">盐湖漂浮 & 壁画</div>
+                    <div class="td">盐湖涉水带换洗衣物与毛巾；永乐宫殿内禁用闪光灯，请提前留意。</div>
+                </div>
+            </div>
+            <div class="gift-note">
+                <b>伴手礼（返程顺路买）：</b>闻喜任诚意煮饼（非遗甜点）· 稷山赵氏四味麻花（现炸）· 临晋酱玉瓜（酱菜）· 福同惠糕点 —— 均位于县城主干道，停车方便。
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer class="footer">
+        <div class="wish">愿此行山河入梦，平安顺遂</div>
+        <div class="en">Have a wonderful journey</div>
+        <div class="heart">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.7-10-9.3C.4 8.6 2.1 5 5.4 5c2 0 3.4 1.1 4.1 2.4C10.2 6.1 11.6 5 13.6 5c1.5 0 2.9.7 3.9 1.9C19.9 9.2 21 12.4 12 21z"/><path d="M12 5.2c.7-1.3 2.1-2.4 4.1-2.4 3.3 0 5 3.6 3.4 6.7C17.5 16.3 12 21 12 21s-5.5-4.7-7.5-9.5C3 9.6 4.6 6 7.9 6 9.9 6 11.3 7.1 12 8.4"/></svg>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            // ---------- 手风琴展开/收起 ----------
+            var headers = document.querySelectorAll('.day-header');
+            var cards = document.querySelectorAll('.day-card');
+
+            function setHeight(card, open) {
+                var content = card.querySelector('.day-content');
+                if (open) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0px';
+                }
+            }
+
+            // 初始：第一张开
+            setHeight(cards[0], true);
+            // 加载后重算，确保字体就绪后高度正确
+            window.addEventListener('load', function () {
+                if (cards[0].classList.contains('open')) setHeight(cards[0], true);
+            });
+
+            headers.forEach(function (header) {
+                header.addEventListener('click', function () {
+                    var card = header.closest('.day-card');
+                    var isOpen = card.classList.contains('open');
+
+                    // 收起所有
+                    var openCards = document.querySelectorAll('.day-card.open');
+                    openCards.forEach(function (c) {
+                        if (c !== card) {
+                            c.classList.remove('open');
+                            setHeight(c, false);
+                        }
+                    });
+
+                    if (isOpen) {
+                        card.classList.remove('open');
+                        setHeight(card, false);
+                    } else {
+                        card.classList.add('open');
+                        setHeight(card, true);
+                    }
+                });
+            });
+
+            // 窗口缩放时更新展开卡片高度
+            window.addEventListener('resize', function () {
+                var openCards = document.querySelectorAll('.day-card.open');
+                openCards.forEach(function (c) { setHeight(c, true); });
+            });
+
+            // ---------- 滚动淡入动画 ----------
+            var revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+                revealEls.forEach(function (el, i) {
+                    el.style.transitionDelay = (i * 0.06) + 's';
+                    io.observe(el);
+                });
+            } else {
+                revealEls.forEach(function (el) { el.classList.add('visible'); });
+            }
+        })();
+    </script>
+</body>
+</html>
